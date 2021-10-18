@@ -12,6 +12,11 @@ client.on('connect',()=>{
     sendLine()
 })
 
+client.on('data',(data)=>{
+    console.log('El servidor dice: '+ data)
+    sendLine()
+})
+
 client.on('error',(err)=>{
     console.log(err.message)
 })
