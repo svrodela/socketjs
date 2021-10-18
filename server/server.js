@@ -4,6 +4,7 @@ const server = net.createServer();
 server.on('connection',(socket)=>{
     socket.on('data',(data)=>{
         console.log('Mensaje recibido desde el cliente: '+ data )
+        socket.write('Mensaje Recibido\n')
     })
     socket.on('close',()=>{
         console.log('Comunicación finalizada' )
